@@ -4,7 +4,7 @@ Projeto experimental Android para testar um launcher de Minecraft Java com foco 
 
 ## Status em 05/11/2026
 
-**Resultado confirmado:** a compilação de referência ARM64 concluiu o Gradle, verificou a integridade do APK e publicou [um artefato no GitHub Actions](https://github.com/paranaeditz90-sketch/HorizonLM-Lab-/actions/runs/42092561568). Isso ainda não atesta abertura ou FPS no celular.\n\n**HorizonLM Java Alpha**: workflow que baixa uma revisão fixa do projeto aberto `ZalithLauncher2`, aplica identificador Android próprio e nome "HorizonLM - Modificacao nao oficial" e tenta compilar um APK ARM64 de depuração. A existência deste workflow não garante que a compilação ou a inicialização no celular já tenha passado.
+**Resultado confirmado:** a compilação de referência ARM64 concluiu o Gradle, verificou a integridade do APK e publicou [um artefato no GitHub Actions](https://github.com/paranaeditz90-sketch/HorizonLM-Lab-/actions/runs/42092561568). Isso ainda não atesta abertura ou FPS no celular.\n\n**Resultado confirmado:** [HorizonLM Java Alpha ARM64](https://github.com/paranaeditz90-sketch/HorizonLM-Lab-/actions/runs/42092966938) compilou e publicou APK com identificador separado. A abertura em emulador e aparelho físico ainda é um teste independente.\n\n**HorizonLM Java Alpha**: workflow que baixa uma revisão fixa do projeto aberto `ZalithLauncher2`, aplica identificador Android próprio e nome "HorizonLM - Modificacao nao oficial" e tenta compilar um APK ARM64 de depuração. A existência deste workflow não garante que a compilação ou a inicialização no celular já tenha passado.
 
 - [Compilar HorizonLM Java Alpha](.github/workflows/horizonlm-java-alpha.yml)
 - [Compilar launcher original de referência](.github/workflows/minecraft-reference.yml)
