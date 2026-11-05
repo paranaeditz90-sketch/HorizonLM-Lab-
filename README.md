@@ -8,7 +8,7 @@ Projeto experimental Android para testar um launcher de Minecraft Java com foco 
 
 - [Compilar HorizonLM Java Alpha](.github/workflows/horizonlm-java-alpha.yml)
 - [Compilar launcher original de referência](.github/workflows/minecraft-reference.yml)
-- [GitHub Actions: acompanhar execuções](../../actions)
+- [Teste de abertura em emulador Android](.github/workflows/horizonlm-emulator.yml)\n- [GitHub Actions: acompanhar execuções](../../actions)
 
 ### Como obter o APK
 
@@ -29,4 +29,4 @@ Esta versão Java Alpha deriva, durante a build, do repositório [ZalithLauncher
 
 O workflow **Minecraft Java de referência** baixa a mesma revisão sem modificar e permite investigar se falhas são introduzidas pela nossa personalização ou se já existem na base.
 
-**Próximas provas**: build ARM64; auditoria do APK; instalação e abertura; download de versão; mundo local; Forge 1.20.1 + mods; comparativo de p50/p99 frame time, temperatura e FPS sustentado no dispositivo real.
+**Próximas provas**: build ARM64; auditoria do APK; abertura em emulador x86_64; instalação no aparelho; download de versão; mundo local; Forge 1.20.1 + mods; comparativo de p50/p99 frame time, temperatura e FPS sustentado no dispositivo real.
