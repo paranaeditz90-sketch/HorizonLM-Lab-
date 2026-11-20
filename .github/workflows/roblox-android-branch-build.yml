@@ -1,0 +1,47 @@
+name: Roblox Android - build isolado
+
+on:
+  push:
+    branches:
+      - experiment/roblox-android-starter
+    paths:
+      - 'roblox-android/**'
+      - '.github/workflows/roblox-android-branch-build.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-roblox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Rojo 7.7.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rojo-tools
+          curl -fsSL --retry 3 https://github.com/rojo-rbx/rojo/releases/download/v7.7.1/rojo-7.7.1-linux-x86_64.zip -o /tmp/rojo.zip
+          unzip -q /tmp/rojo.zip -d /tmp/rojo-tools
+          chmod +x /tmp/rojo-tools/rojo
+          echo /tmp/rojo-tools >> "$GITHUB_PATH"
+
+      - name: Compilar lugar Roblox (sem publicar)
+        working-directory: roblox-android
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          rojo build default.project.json -o build/LM-Roblox-Android-Demo.rbxlx
+          test -s build/LM-Roblox-Android-Demo.rbxlx
+
+      - name: Arquivar arquivo gerado
+        uses: actions/upload-artifact@v4
+        with:
+          name: LM-Roblox-Android-RBXLX
+          path: roblox-android/build/LM-Roblox-Android-Demo.rbxlx
+          retention-days: 7
+          if-no-files-found: error
